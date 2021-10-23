@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #292929c7;
+  --secondary-color: #ffffff;
+}
+h1 {
+  color: var(--secondary-color);
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.game-board {
+  margin: 2rem 0;
+  width: 45vmin;
+  height: 45vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 15vmin);
+  grid-template-rows: repeat(3, 15vmin);
+}
+.box {
+  box-shadow: 0 0 6px var(--secondary-color);
+  border: 4px 4px 4px 4px solid var(--secondary-color);
+  font-size: 10vmin;
+  color: var(--secondary-color);
+}
+.box:hover {
+  cursor: default;
+}
+.turn {
+  margin: 1rem;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+.winner {
+  margin: 1rem;
+  font-size: 2rem;
+  color: green;
+  font-weight: 500;
+}
+.history {
+  max-height: 30vh;
+  overflow: auto;
+  padding: 1rem;
+}
+h2 {
+  color: var(--secondary-color);
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+}
+.history-list {
+  padding: 0;
+  margin: 1rem 0;
+  list-style-type: none;
+}
+.history-list li,
+.reset {
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: none;
+  outline: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  color: var(--secondary-color);
+}
+
+.history-list li:hover,
+.reset:hover {
+  cursor: pointer;
+  background: var(--primary-color);
+}
+
+.msg {
+  font-size: 1.5rem;
+  color: red;
+  font-weight: 700;
+}
+.reset {
+  background: transparent;
+}
