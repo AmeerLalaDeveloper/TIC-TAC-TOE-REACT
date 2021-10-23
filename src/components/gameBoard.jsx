@@ -31,15 +31,15 @@ class GameBoard extends React.Component{
     */
     getWinner=()=>{
         let temp=this.state.board;
-        let lastPlayer=this.state.isX_O=='X'?'O':'X';
-        if(temp[0]&&temp[0]==temp[1]&&temp[1]==temp[2]
-        ||temp[0]&&temp[0]==temp[3]&&temp[3]==temp[6]
-        ||temp[0]&&temp[0]==temp[4]&&temp[4]==temp[8]
-        ||temp[1]&&temp[1]==temp[4]&&temp[4]==temp[7]
-        ||temp[2]&&temp[2]==temp[5]&&temp[5]==temp[8]
-        ||temp[2]&&temp[2]==temp[4]&&temp[4]==temp[6]
-        ||temp[3]&&temp[3]==temp[4]&&temp[4]==temp[5]
-        ||temp[6]&&temp[6]==temp[7]&&temp[7]==temp[8])
+        let lastPlayer=this.state.isX_O==='X'?'O':'X';
+        if((temp[0]&&temp[0]===temp[1]&&temp[1]===temp[2])
+        ||(temp[0]&&temp[0]===temp[3]&&temp[3]===temp[6])
+        ||(temp[0]&&temp[0]===temp[4]&&temp[4]===temp[8])
+        ||(temp[1]&&temp[1]===temp[4]&&temp[4]===temp[7])
+        ||(temp[2]&&temp[2]===temp[5]&&temp[5]===temp[8])
+        ||(temp[2]&&temp[2]===temp[4]&&temp[4]===temp[6])
+        ||(temp[3]&&temp[3]===temp[4]&&temp[4]===temp[5])
+        ||(temp[6]&&temp[6]===temp[7]&&temp[7]===temp[8]))
         this.setState({winner:lastPlayer,isGameOver:true})
     }
     /*  
@@ -65,7 +65,7 @@ class GameBoard extends React.Component{
          boardsTemp.push(temp);
         temp[boxNumber]=this.state.isX_O;
        await new Promise(resolve=>{
-         this.setState({isX_O:this.state.isX_O=='X'?'O':'X'})
+         this.setState({isX_O:this.state.isX_O==='X'?'O':'X'})
          this.setState({board:temp,allBoards:boardsTemp,history:this.state.history+1},resolve)
         })
         //after upadting  box check if theres a winner
@@ -83,7 +83,7 @@ class GameBoard extends React.Component{
         if(this.state.isGameOver)
         return
         //set number of clicks , incase its equal to 9 it means no winner (draw)  
-        if(this.state.allBoards.length==8)
+        if(this.state.allBoards.length===8)
         this.setState({winner:'Draw',isGameOver:true})
         //in case user clicked box we want to change player turn ,update board,check if it has been clicked before
         if(!this.state.board[boxNumber])
@@ -109,7 +109,7 @@ class GameBoard extends React.Component{
             }
             </div>
             <div className={this.state.winner?'winner':'turn'}>{
-               this.state.winner&&this.state.winner!='Draw'?'Player '+this.state.winner+' is Winner':this.state.winner=='Draw'?'Draw Game': 'Player ' +this.state.isX_O+' Turn'
+               this.state.winner&&this.state.winner!=='Draw'?'Player '+this.state.winner+' is Winner':this.state.winner==='Draw'?'Draw Game': 'Player ' +this.state.isX_O+' Turn'
               
             }
             </div>

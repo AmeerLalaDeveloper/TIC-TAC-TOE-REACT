@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-// import GameBoard from './components/GameBoard/GameBoard'
-import GameBoard from './components/tic-tac-toe/gameBoard'
+import GameBoard from './components/gameBoard';
 
 function App() {
   return (
