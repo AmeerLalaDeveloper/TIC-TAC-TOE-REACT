@@ -75,4 +75,6 @@ h2 {
 }
 .reset {
   background: transparent;
+  font-size: 2rem;
+  padding: 1rem 2rem;
 }
