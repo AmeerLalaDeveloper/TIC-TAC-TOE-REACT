@@ -19,3 +19,5 @@ npm install
 ```
 
 # Steps To Build The Project
+
+![Diagram](./tic-tac-diagram.png)
